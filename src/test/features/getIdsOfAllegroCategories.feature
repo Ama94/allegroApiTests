@@ -2,7 +2,7 @@ Business Need: get ids of allegro categories
 
   @API @ALLEGRO
   Scenario: TC001 checking get ids of allegro categories, get code status 200 and check response JSON
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer                                 |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user GET "sale/categories" method
@@ -13,7 +13,7 @@ Business Need: get ids of allegro categories
 
   @API @ALLEGRO
   Scenario: TC002 checking get ids of allegro categories, get code status 200 and check response JSON
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer                                 |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user GET "sale/categories" method
@@ -26,7 +26,7 @@ Business Need: get ids of allegro categories
 
   @API @ALLEGRO
   Scenario: TC003 checking get ids of allegro categories, get code status 200 and check response JSON
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer                                 |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user GET "sale/categories" method
@@ -45,7 +45,7 @@ Business Need: get ids of allegro categories
 
   @API @ALLEGRO
   Scenario: TC004 checking get ids of allegro categories without accept
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer |
     When The user GET "sale/categories" method
     Then The status code is 406
@@ -57,22 +57,22 @@ Business Need: get ids of allegro categories
 
   @API @ALLEGRO
   Scenario: TC005 checking get ids of allegro categories without authorization
-    Given test
+    Given The user fill headers with data
       | Accept | application/vnd.allegro.public.v1+json |
     When The user GET "sale/categories" method
     Then The status code is 401
 
   @API @ALLEGRO
   Scenario: TC006 checking get ids of allegro categories with wrong bearer token
-    Given test
-      | Authorization | Bearer test                            |
+    Given The user fill headers with data
+      | Authorization | Bearer test                         |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user GET "sale/categories" method
     Then The status code is 401
 
   @API @ALLEGRO
   Scenario: TC007 checking get ids of allegro categories using POST method
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer                                 |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user POST "sale/categories" method
@@ -84,7 +84,7 @@ Business Need: get ids of allegro categories
 
   @API @ALLEGRO
   Scenario: TC008 checking get ids of allegro categories using PUT method
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer                                 |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user PUT "sale/categories" method
@@ -96,7 +96,7 @@ Business Need: get ids of allegro categories
 
   @API @ALLEGRO
   Scenario: TC009 checking get ids of allegro categories using DELETE method
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer                                 |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user DELETE "sale/categories" method

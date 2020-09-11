@@ -37,8 +37,8 @@ public class ApiSteps {
         authorization = Authorization.getInstance();
     }
 
-    @Given("^test$")
-    public void test(DataTable headersData) {
+    @Given("^The user fill headers with data$")
+    public void theUserFillHeadersWithData(DataTable headersData) {
         List<Header> list = new ArrayList<>();
         for (Map.Entry<String, String> headerData : headersData.asMap(String.class, String.class).entrySet()) {
             Header header;

@@ -2,7 +2,7 @@ Business Need: get category by id
 
   @API @ALLEGRO
   Scenario: TC001 checking get category for id "5" and get code status 200
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer                                 |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user GET "sale/categories/5" method
@@ -21,7 +21,7 @@ Business Need: get category by id
 
   @API @ALLEGRO
   Scenario: TC002 checking get category for id "ea5b98dd-4b6f-4bd0-8c80-22c2629132d0" and get code status 200
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer                                 |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user GET "sale/categories/ea5b98dd-4b6f-4bd0-8c80-22c2629132d0" method
@@ -40,7 +40,7 @@ Business Need: get category by id
 
   @API @ALLEGRO
   Scenario: TC003 checking get category for id "42540aec-367a-4e5e-b411-17c09b08e41f" and get code status 200
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer                                 |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user GET "sale/categories/42540aec-367a-4e5e-b411-17c09b08e41f" method
@@ -59,7 +59,7 @@ Business Need: get category by id
 
   @API @ALLEGRO
   Scenario: TC004 checking get category for id 5 without accept
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer |
     When The user GET "sale/categories/5" method
     Then The status code is 406
@@ -70,7 +70,7 @@ Business Need: get category by id
 
   @API @ALLEGRO
   Scenario: TC005 checking get category for id 5 without token
-    Given test
+    Given The user fill headers with data
       | Accept | application/vnd.allegro.public.v1+json |
     When The user GET "sale/categories/5" method
     Then The status code is 401
@@ -80,8 +80,8 @@ Business Need: get category by id
 
   @API @ALLEGRO
   Scenario: TC006 checking get category for id 5 with wrong token
-    Given test
-      | Authorization | Bearer test                            |
+    Given The user fill headers with data
+      | Authorization | Bearer fail                            |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user GET "sale/categories/5" method
     Then The status code is 401
@@ -91,7 +91,7 @@ Business Need: get category by id
 
   @API @ALLEGRO
   Scenario: TC007 checking get category with not existing id
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer                                 |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user GET "sale/categories/141" method
@@ -103,7 +103,7 @@ Business Need: get category by id
 
   @API @ALLEGRO
   Scenario: TC008 checking get category by id using POST method
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer                                 |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user POST "sale/categories/5" method
@@ -115,7 +115,7 @@ Business Need: get category by id
 
   @API @ALLEGRO
   Scenario: TC009 checking get category by id using PUT method
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer                                 |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user PUT "sale/categories/5" method
@@ -127,7 +127,7 @@ Business Need: get category by id
 
   @API @ALLEGRO
   Scenario: TC010 checking get category by id using DELETE method
-    Given test
+    Given The user fill headers with data
       | Authorization | Bearer                                 |
       | Accept        | application/vnd.allegro.public.v1+json |
     When The user DELETE "sale/categories/5" method
